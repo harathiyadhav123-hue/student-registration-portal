@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="text-center py-5">
+        <h1 class="text-2xl font-bold">
+            Student Dashboard
+        </h1>
+    </div>
+    <div class="max-w-4xl mx-auto px-4">
+        <div class="signup-form mb-5">
+            <h2
+                id="welcomeMessage"
+                class="text-xl font-semibold">
+            </h2>
+            <p class="text-gray-600 mt-1">
+                Your registered details are shown below.
+            </p>
+        </div>
+        <div class="signup-form">
+            <h3 class="text-lg font-semibold mb-5">
+                Student Details
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <p class="font-semibold">Name</p>
+                    <p id="studentName" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Email</p>
+                    <p id="studentEmail" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Date of Birth</p>
+                    <p id="studentDob" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Gender</p>
+                    <p id="studentGender" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Qualification</p>
+                    <p id="studentQualification" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Interests</p>
+                    <p id="studentInterests" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Class</p>
+                    <p id="studentClass" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Subject</p>
+                    <p id="studentSubject" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Marks</p>
+                    <p id="studentMarks" class="mt-1"></p>
+                </div>
+                <div>
+                    <p class="font-semibold">Aadhaar Document</p>
+                    <a
+                        id="aadhaarLink"
+                        href="#"
+                        target="_blank"
+                        class="text-blue-600 hover:underline">
+                        View Aadhaar
+                    </a>
+                </div>
+            </div>
+            <div class="mt-6">
+                <button
+                    id="editProfileButton"
+                    class="bg-blue-600 text-white px-5 py-2 rounded-md hover:bg-blue-700">
+                    Edit Profile
+                </button>
+            </div>
+        </div>
+        <div
+            id="editProfileSection"
+            class="signup-form mt-5 hidden">
+            <h3 class="text-lg font-semibold mb-5">
+                Edit Profile
+            </h3>
+            <form id="editProfileForm">
+                <div class="mb-4">
+                    <label for="editName" class="block mb-2">
+                        Name
+                    </label>
+                    <input
+                        type="text"
+                        id="editName"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="editEmail" class="block mb-2">
+                        Email
+                    </label>
+                    <input
+                        type="email"
+                        id="editEmail"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2 bg-gray-100"
+                        readonly>
+                </div>
+                <div class="mb-4">
+                    <label for="editDob" class="block mb-2">
+                        Date of Birth
+                    </label>
+                    <input
+                        type="date"
+                        id="editDob"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2">
+                        Gender
+                    </label>
+                    <div class="flex gap-4">
+                        <div>
+                            <input
+                                type="radio"
+                                name="editGender"
+                                value="Male">
+                            <label>Male</label>
+                        </div>
+                        <div>
+                            <input
+                                type="radio"
+                                name="editGender"
+                                value="Female">
+                            <label>Female</label>
+                        </div>
+                        <div>
+                            <input
+                                type="radio"
+                                name="editGender"
+                                value="Other">
+                            <label>Other</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="editQualification" class="block mb-2">
+                        Qualification
+                    </label>
+                    <select
+                        id="editQualification"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2"
+                        required>
+                        <option value="">Select Qualification</option>
+                        <option value="High School">High School</option>
+                        <option value="Bachelor's">Bachelor's</option>
+                        <option value="Master's">Master's</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2">
+                        Interests
+                    </label>
+                    <div class="flex flex-wrap gap-4">
+                        <div>
+                            <input
+                                type="checkbox"
+                                name="editInterests"
+                                value="Coding">
+                            <label>Coding</label>
+                        </div>
+                        <div>
+                            <input
+                                type="checkbox"
+                                name="editInterests"
+                                value="Design">
+                            <label>Design</label>
+                        </div>
+                        <div>
+                            <input
+                                type="checkbox"
+                                name="editInterests"
+                                value="Gaming">
+                            <label>Gaming</label>
+                        </div>
+                        <div>
+                            <input
+                                type="checkbox"
+                                name="editInterests"
+                                value="Sports">
+                            <label>Sports</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="editClass" class="block mb-2">
+                        Class
+                    </label>
+                    <input
+                        type="text"
+                        id="editClass"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="editSubject" class="block mb-2">
+                        Subject
+                    </label>
+                    <input
+                        type="text"
+                        id="editSubject"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="editMarks" class="block mb-2">
+                        Marks
+                    </label>
+                    <input
+                        type="number"
+                        id="editMarks"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="editAadhaar" class="block mb-2">
+                        Replace Aadhaar Document
+                    </label>
+                    <input
+                        type="file"
+                        id="editAadhaar"
+                        class="w-full border border-gray-300 rounded-md px-3 py-2"
+                        accept=".pdf">
+                    <p class="text-sm text-gray-500 mt-1">
+                        Upload PDF only
+                    </p>
+                </div>
+                <div
+                    id="editErrorMessage"
+                    class="hidden mb-4 p-3 bg-red-100 text-red-700 rounded-md">
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        type="submit"
+                        class="bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700">
+                        Save Changes
+                    </button>
+                    <button
+                        type="button"
+                        id="cancelEditButton"
+                        class="bg-gray-500 text-white px-5 py-2 rounded-md hover:bg-gray-600">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="storage.js"></script>
+    <script src="student.js"></script>
+</body>
+</html>
